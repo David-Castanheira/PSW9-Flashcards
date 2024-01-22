@@ -162,3 +162,27 @@ def responder_flashcard(request, id):
     flashcard_desafio.save()
 
     return redirect(f'/flashcard/desafio/{desafio_id}')
+
+def relatorio(request, id):
+    desafio = Desafio.objects.get(id = id)
+    acertos = desafio.flashcards.filter(acertou = True).count()
+    erros = desafio.flashcards.filter(acertou = False).count()
+
+    dados = [acertos, erros]
+
+    categorias = desafio.categoria.all()
+    name_categoria = [i.nome for i in categorias]
+
+    dados_categorias = []
+    for categoria in categorias:
+        # Filtrar por campo na tabela. Apenas as que acertei
+        dados_categorias.append(desafio.flashcards.filter(flashcard__categoria = categoria).filter(acertou = True).count())
+    
+    # Exibindo as categorias no 2° gráfico - Forma primária
+    # name_categoria = []
+    # for i in categorias:
+    #     name_categoria.append(i.nome)
+        
+    #TODO: Fazer o ranking
+
+    return render(request, 'relatorio.html', {'desafio': desafio, 'dados': dados, 'categoria': name_categoria, 'dados_categorias': dados_categorias})
