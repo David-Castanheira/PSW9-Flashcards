@@ -34,7 +34,7 @@ $ pip install django
 ```
 Após isso, acesse "http://localhost:8000" -> onde 8000 é a porta que o Django usa por padrão. Caso exiba uma tela interativa significa que a instalação ocorreu de maneira esperada! Parabéns!
 
-[![Imagem 1 - Tela de instalação bem-sucedida (Mozilla MDN)]](https://developer.mozilla.org/es/docs/Learn/Server-side/Django/development_environment/django_skeleton_app_homepage_django_4_0.png "Imagem 1 - Tela de instalação bem-sucedida (Mozilla MDN)")
+[![Imagem 1 - Tela de instalação bem-sucedida - Mozilla MDN](https://developer.mozilla.org/es/docs/Learn/Server-side/Django/development_environment/django_skeleton_app_homepage_django_4_0.png)](https://developer.mozilla.org/es/docs/Learn/Server-side/Django/development_environment/)
 
 ## Iniciando um projeto
 ```
