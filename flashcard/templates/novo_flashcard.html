@@ -101,14 +101,15 @@
       </form>
       <br />
       <br />
-      {% for flashcard in flashcards %}
 
+      {% for flashcard in flashcards %}
       <div class="box-new-flashcard" onclick="flip_card({{flashcard.id}})">
         <div class="flashcard">
           <div class="flashcard-categoria">{{flashcard.categoria}}</div>
           <a href="{% url 'deletar_flashcard' flashcard.id %}"><i class="icone-exit bx bx-x-circle"></i></a>
           <br />
           <br />
+          <div class="flashcard-dificuldade {% if flashcard.DIFICULDADE_CHOICES == 'F' %}flashcard-facil{% elif flashcard.DIFICULDADE_CHOICES == 'M' %}flashcard-medio{% elif flashcard.DIFICULDADE_CHOICES == 'D' %}flashcard-dificil{% endif %}"></div>
           <div class="flashcard-box-item">
             <p class="flashcard-item">{{flashcard.pergunta}}?</p>
           </div>

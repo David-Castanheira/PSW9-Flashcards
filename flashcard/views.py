@@ -60,12 +60,18 @@ def novo_flashcard(request):
         return redirect('/flashcard/novo_flashcard')
     
 def deletar_flashcard(request, id):
-    # Fazer a validação de segurança
+    # Fazer a validação de segurança (verificar se o que foi feito abaixo está certo)
     # dica: request.auth
+
     flashcard = Flashcard.objects.get(id = id)
+
+    if not flashcard.user == request.user:
+        raise Http404   
+    
     flashcard.delete()
     messages.add_message(request, constants.SUCCESS, "Flashcard deletado com sucesso!")
     return redirect('/flashcard/novo_flashcard')
+    
 
 def iniciar_desafio(request):
     if request.method == "GET":
