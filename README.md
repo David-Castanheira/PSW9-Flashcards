@@ -54,7 +54,7 @@ $ python manage.py makemigrations
 
 $ python manage.py migrate
 ```
-Obs:. Perceba que nelas há a passagem do arquivo 'manage.py' respnsável justamente por esse gerenciamento da aplicação
+Obs:. Perceba que nelas há a passagem do arquivo 'manage.py' responsável justamente por esse gerenciamento da aplicação
 
 ### Superusuário
 Para criar um superusuário (informe e-mail e senha para ter acesso ao painel de admin) na sua aplicação, execute o comando abaixo:
@@ -63,7 +63,7 @@ Para criar um superusuário (informe e-mail e senha para ter acesso ao painel de
 $ python manage.py createsuperuser
 ```
 
-Após isso, acesse "http://localhost:8000/admin"
+Após isso, acesse "[http://localhost:8000/admin]"
 
 ### Execução
 ```
